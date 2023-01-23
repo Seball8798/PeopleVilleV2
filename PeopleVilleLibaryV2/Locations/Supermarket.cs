@@ -8,11 +8,14 @@ namespace PeopleVilleLibraryV2.Location
 {
     public class Supermarket : Location
     {
-        List<string> Items;ew List<{
+        List<string> Items;
         public Supermarket(List<string> items)
-
+        {
             Items = items;
         }
+        public void Medarbejder()
+        {
+
+        }
     }
-    public void Medarbejder(
 }

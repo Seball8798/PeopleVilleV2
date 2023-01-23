@@ -11,7 +11,7 @@ namespace PeopleVilleLibraryV2.Location
         List<string> food;
 
 
-        public Restaurant(List<string> food) : base(r, h)
+        public Restaurant(List<string> food) : ba se(r, h)
         {
             this.food = food;
         }
