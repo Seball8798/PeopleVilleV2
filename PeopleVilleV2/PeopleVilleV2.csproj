@@ -7,4 +7,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PeopleVilleLibaryV2\PeopleVilleLibraryV2.csproj" />
+  </ItemGroup>
+
 </Project>

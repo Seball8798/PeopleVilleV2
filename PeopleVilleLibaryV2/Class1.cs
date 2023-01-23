@@ -1,4 +1,4 @@
-﻿namespace PeopleVilleLibaryV2
+﻿namespace PeopleVilleLibraryV2
 {
     public class Class1
     {

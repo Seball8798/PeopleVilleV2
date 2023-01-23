@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleVilleV2", "PeopleVilleV2\PeopleVilleV2.csproj", "{D795E331-D267-486E-A9BE-AAF6CC9BA2EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleVilleLibaryV2", "PeopleVilleLibaryV2\PeopleVilleLibaryV2.csproj", "{758DB36F-BC79-4E5F-9FAE-55F881FAC2F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleVilleLibraryV2", "PeopleVilleLibaryV2\PeopleVilleLibraryV2.csproj", "{758DB36F-BC79-4E5F-9FAE-55F881FAC2F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
