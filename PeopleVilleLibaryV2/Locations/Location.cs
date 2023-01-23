@@ -1,13 +1,13 @@
-﻿namespace PeopleVilleLibraryV2
+﻿namespace PeopleVilleLibraryV2.Location
 {
     public class Location
     {
 
         public string streetName;
-        public string streetNumber;
+        public int streetNumber;
         public int streetContact;
 
-        public Location(string streetName, string streetNumber, int streetContact)
+        private Location(string streetName, int streetNumber, int streetContact)
         {
             this.streetName = streetName;
             this.streetNumber = streetNumber;
