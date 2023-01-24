@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PeopleVilleLibraryV2.Transport
 {
-    class Taxi : Transport
+    public class Taxi : Transport
     {
         public override void Drive() 
         {

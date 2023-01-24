@@ -6,12 +6,35 @@ using System.Threading.Tasks;
 
 namespace PeopleVilleLibraryV2.iItems
 {
-    class Food : Iitems
+    public class Food : Iitems
     {
         public string name { get; set; }
+
         public int price { get; set; }
 
-        public void pickup() { }
-        public void transfer() { }
+        public string pickup()
+        {
+
+            return "";
+        }
+        public string transfer()
+        {
+            return "";
+
+        }
+
+        public void FoodList()
+        {
+            List<string> food = new List<string>();
+            food.Add("Mango"); food.Add("Banan"); food.Add("Orange"); food.Add("Pizza"); food.Add("Burger"); food.Add("Apple"); food.Add("Pineapple");
+
+            foreach (var item in food)
+            {
+                Console.WriteLine(item.ToString());
+
+            }
+        }
     }
 }
+
+

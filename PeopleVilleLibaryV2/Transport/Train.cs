@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace PeopleVilleLibraryV2.Transport
 {
-    class Train : Transport
+    public class Train : Transport
     {
 
         public override void Drive() 
         { 
-        
+            
         }
 
         public  override void Stop() 
         { 
-        
-        
+            
         }
     }
 }

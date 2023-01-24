@@ -1,6 +1,6 @@
 ﻿namespace PeopleVilleLibraryV2.Location
 {
-    class Location
+    public class Location
     {
 
         public string streetName;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PeopleVilleLibraryV2.Date
 {
-    internal class Days
+    public class Days
     {
         public List<string> dayNames;
         private bool newDay;
@@ -17,6 +17,10 @@ namespace PeopleVilleLibraryV2.Date
             this.dayNames = dayNames;
             this.newDay = newDay;
             this.Salary = Salary;
+        }
+        public Days()
+        {
+
         }
     }
 }

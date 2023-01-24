@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PeopleVilleLibraryV2.Location
 {
-    class Restaurant : Location
+    public class Restaurant : Location
     {
         List<string> food;
 
