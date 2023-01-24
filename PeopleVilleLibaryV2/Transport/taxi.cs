@@ -8,7 +8,14 @@ namespace PeopleVilleLibraryV2.Transport
 {
     class Taxi : Transport
     {
-        //ovveride  Drive() { }
-        //ovveride  Stop() { }
+        public override void Drive() 
+        {
+
+        }
+
+        public override void Stop() 
+        {
+
+        }
     }
 }

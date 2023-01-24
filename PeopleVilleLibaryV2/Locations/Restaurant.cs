@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PeopleVilleLibraryV2.Location
 {
-    public class Restaurant : Location
+    class Restaurant : Location
     {
         List<string> food;
 
 
-        public Restaurant(List<string> food) : ba se(r, h)
+        public Restaurant(string streetName, int streetNumber, int streetContact, List<string> food) : base(streetName, streetNumber, streetContact)
         {
             this.food = food;
         }

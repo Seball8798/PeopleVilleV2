@@ -8,7 +8,16 @@ namespace PeopleVilleLibraryV2.Transport
 {
     class Train : Transport
     {
-        //ovveride  Drive() { }
-        //ovveride  Stop() { }
+
+        public override void Drive() 
+        { 
+        
+        }
+
+        public  override void Stop() 
+        { 
+        
+        
+        }
     }
 }

@@ -1,13 +1,13 @@
 ﻿namespace PeopleVilleLibraryV2.Location
 {
-    public class Location
+    class Location
     {
 
         public string streetName;
         public int streetNumber;
         public int streetContact;
 
-        private Location(string streetName, int streetNumber, int streetContact)
+        public Location(string streetName, int streetNumber, int streetContact)
         {
             this.streetName = streetName;
             this.streetNumber = streetNumber;
@@ -18,6 +18,5 @@
         {
 
         }
-
     }
 }

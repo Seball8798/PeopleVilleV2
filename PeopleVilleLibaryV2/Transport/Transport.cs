@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace PeopleVilleLibraryV2.Transport
 {
-    abstract class Transport
+    public abstract class Transport
     {
-        
-     //abstract void Drive()
-     //abstract void Stop()
+        public abstract void Drive();
+        public abstract void Stop();
     }
 }
