@@ -1,35 +1,23 @@
 ﻿using PeopleVilleLibraryV2;
 using PeopleVilleLibraryV2.Date;
 using PeopleVilleLibraryV2.iItems;
-using PeopleVilleLibraryV2.Inhibitans;
+using PeopleVilleLibraryV2.InhibitansFolder;
+using PeopleVilleLibraryV2.Location;
+using PeopleVilleLibraryV2.Transport;
 
 public class Program
 {
     private static void Main(string[] args)
     {
-        Food food = new Food();
-        Weapon weapon = new Weapon();
-        Inhibitans inhibitans1 = new Inhibitans();
-        Days days = new Days();
+        //weapon.WeaponList();
+        //food.FoodList();
 
-        weapon.WeaponList();
-        food.FoodList();
-        
+        //inhibitans1.InhibitansProfil(inhibitans1);
+        //inhibitans1.InhibitansProfil(inhibitans2);
+        Location location = new Location();
+        location.Traffic();
+        location.streetName = "Munkebjergvej";
+        location.streetNumber = 130;
+
     }
-    //public static void FoodArray()
-    //{
-    //    List<string> food = new List<string>();
-    //    food.Add("Mango"); food.Add("Banan"); food.Add("Orange"); food.Add("Pizza"); food.Add("Burger"); food.Add("Apple"); food.Add("Pineapple");
-    //    //Food[] food = {new Food ("salat"),
-    //    //                   new Food ("pizza"),
-    //    //                   new Food ("Bønner")};
-
-    //    foreach (var item in food)
-    //    {
-    //        Console.WriteLine(item.ToString());
-
-    //    }
-    //    //return food.Length;
-    //
-
 }

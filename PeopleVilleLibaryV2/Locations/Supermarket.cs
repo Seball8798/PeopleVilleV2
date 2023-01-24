@@ -9,10 +9,26 @@ namespace PeopleVilleLibraryV2.Location
     public class Supermarket : Location
     {
         List<string> Items;
-        public Supermarket(string streetName, int streetNumber, int streetContact, List<string> items) : base(streetName, streetNumber, streetContact)
+        public Supermarket(string streetName, int streetNumber, List<string> items) : base(streetName, streetNumber)
         {
             Items = items;
         }
+        
+        public Supermarket(string streetName, int streetNumber) : base(streetName, streetNumber)
+        {
+            
+        }
+
+        public Supermarket(string streetName) : base(streetName)
+        {
+
+        }
+
+        public  Supermarket() 
+        {
+
+        }
+
         public void Medarbejder()
         {
 

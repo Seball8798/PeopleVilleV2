@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PeopleVilleLibraryV2;
-using PeopleVilleLibraryV2.Inhibitans;
+using PeopleVilleLibraryV2.InhibitansFolder;
 using PeopleVilleLibraryV2.Transport;
 
 namespace PeopleVilleV2
@@ -38,7 +38,6 @@ namespace PeopleVilleV2
             Inhibitans inhibitans1 = new Inhibitans(name[0], food[2]);
             Inhibitans inhibitans2 = new Inhibitans(name[1], money);
             Inhibitans inhibitans3 = new Inhibitans(name[2], money);
-
 
             Taxi taxi = new Taxi();
             Train train = new Train();

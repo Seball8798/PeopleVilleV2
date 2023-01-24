@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PeopleVilleLibraryV2.iItems;
+using PeopleVilleLibraryV2.Location;
+using System.Reflection;
 
-
-namespace PeopleVilleLibraryV2.Inhibitans
+namespace PeopleVilleLibraryV2.InhibitansFolder
 {
     public class Inhibitans
     {
-        private string Name { get; set; }
-        public string Food;
+        public string name { get; set; }
+        public string food;
         public List<string> Item;
         Random rand = new Random();
         public int MoneyAmount;
@@ -22,31 +23,31 @@ namespace PeopleVilleLibraryV2.Inhibitans
 
         public Inhibitans(string name, string food, List<string> item, int moneyAmount)
         {
-            Name = name;
-            Food = food;
+            name = name;
+            food = food;
             Item = item;
             MoneyAmount = moneyAmount;
         }
 
         public Inhibitans(string name, string food, int moneyAmount)
         {
-            Name = name;
-            Food = food;
+            name = name;
+            food = food;
             MoneyAmount = moneyAmount;
         }
         public Inhibitans(string name, int moneyAmount)
         {
-            Name = name;
+            name = name;
             MoneyAmount = moneyAmount;
         }
         public Inhibitans(string name, string food)
         {
-            Name = name;
-            Food = food;
+            name = name;
+            food = food;
         }
         public Inhibitans(string name)
         {
-            Name = name;
+            name = name;
         }
         public Inhibitans()
         {
@@ -63,5 +64,24 @@ namespace PeopleVilleLibraryV2.Inhibitans
         {
 
         }
+
+        public void InhibitansProfil(Inhibitans inhibitans)
+        {
+            Food food = new Food();
+            Weapon weapon = new Weapon();
+            food.FoodList();
+            weapon.WeaponList();
+
+
+
+
+            //inhibitans.TrainAction();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
     }
 }
