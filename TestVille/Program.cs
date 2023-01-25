@@ -9,23 +9,11 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        //weapon.WeaponList();
-        //food.FoodList();
 
-        Location location = new Location();
         Inhibitans inhibitans = new Inhibitans();
-        //location.Traffic();
-        location.streetName = "Munkebjergvej";
-        location.streetNumber = 130;
-
-        inhibitans.InhibitansProfil(inhibitans);
-        //Console.WriteLine("\nlokation " + location.streetName);
-
+        inhibitans.InhibitansProfil();
         Console.ReadLine();
-        //Console.WriteLine(inhibitans);
-        //Console.WriteLine("Inhibitans Name: " + inhibitans.name);
-        //Console.WriteLine("Food: " + inhibitans.food);
-        //Console.WriteLine("Weapon: " + inhibitans.weapon);
+
 
 
 
