@@ -7,12 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#212121">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#F3FAFF" >
+        <Grid Background="#F3FAFF" Grid.ColumnSpan="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -21,17 +25,24 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Foreground="Black" FontWeight="DemiBold" VerticalAlignment="Center" FontSize="16" Padding="4" FontFamily="fonts/#Dosis" OpacityMask="Black">
+            <TextBlock Grid.Column="3" Foreground="Black" FontWeight="DemiBold" VerticalAlignment="Center" FontSize="16" Padding="4" FontFamily="fonts/#Dosis" OpacityMask="Black" HorizontalAlignment="Right">
                 <TextBlock.Style>
                     <Style/>
                 </TextBlock.Style>
                 <TextBlock>
-                </TextBlock>Five Words Five Letters</TextBlock>
+                </TextBlock>People Village</TextBlock>
+            
+            <TextBlock Foreground="Black" FontWeight="DemiBold" VerticalAlignment="Center" FontSize="16" Padding="4" FontFamily="fonts/#Dosis" OpacityMask="Black" HorizontalAlignment="Left">
+                <TextBlock.Style>
+                    <Style/>
+                </TextBlock.Style>
+                <TextBlock>
+                </TextBlock>People Village</TextBlock>
 
             <Grid Grid.Column="1" HorizontalAlignment="Right">
                 <!-- Gross -->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="2"/>
                     <ColumnDefinition Width="2"/>
                     <ColumnDefinition Width="25"/>
                     <ColumnDefinition Width="2"/>
@@ -40,7 +51,7 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="583*"/>
                 <ColumnDefinition Width="62*"/>
@@ -58,14 +69,11 @@
             <Grid Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="0"/>
                     <RowDefinition Height="65"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="1" >
-                    <Button x:Name="InputFile" Click="InputFile_Click" Content="Switch Day" VerticalAlignment="Top" Background="#FF373544" Foreground="White" BorderBrush="#A3ABBD"  Margin="10,13,695,0" Width="95" Height="26" MinHeight="25" MaxHeight="25" MinWidth="95" MaxWidth="95" FontSize="14" FontFamily="Bookman Old Style">
+                <Grid Grid.Row="1" Grid.RowSpan="2">
+                    <Button  x:Name="InputFile" Click="InputFile_Click" Content="Switch Day" VerticalAlignment="Top" Background="#FF373544" Foreground="White" BorderBrush="#A3ABBD"  Margin="35,13,619,0" Height="26" MinHeight="25" MaxHeight="25" MinWidth="95" MaxWidth="95" FontSize="14" FontFamily="Bookman Old Style">
 
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -74,8 +82,17 @@
                         </Button.Resources>
                     </Button>
                 </Grid>
-                <Grid Grid.Row="5" Margin="5,5,5,16" Height="100">
-                    <Label Name="OutPut"  Content="" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="20" Foreground="#F3FAFF" Margin="50,-44,50,-30" Background="#FF8685EF"/>
+                <Grid  Grid.RowSpan="5" Margin="4,30,4,62" Height="350" Width="550">
+                    <DataGrid Grid.Row="0" Grid.Column="0" Padding="10" AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="18" Foreground="#FF373544" Margin="50,35,50,35" Background="#FF36353E" ItemsSource="{Binding People}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                            <DataGridTextColumn Header="Location" Binding="{Binding Location}" />
+                            <DataGridTextColumn Header="Money" Binding="{Binding Money}" />
+                            <DataGridTextColumn Header="Food" Binding="{Binding Food}" />
+                            <DataGridTextColumn Header="Weapons" Binding="{Binding Weapons}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <!--<Label Name="OutPut"  HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="20" Foreground="#F3FAFF" Margin="50,40,50,-114" Background="#FF30295F"/>-->
                 </Grid>
             </Grid>
         </Grid>
