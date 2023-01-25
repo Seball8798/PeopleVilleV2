@@ -1,0 +1,22 @@
+                public void Trade(Inhibitans sender, Inhibitans receiver, string item, int money)
+        {
+            if ((sender.food == item || sender.weapon == item) && sender.moneyAmount >= money)
+            {
+                //Remove item from sender's inventory
+                if (sender.food == item)
+                    sender.food = "";
+                else
+                    sender.weapon = "";
+
+
+                // Add money to sender's account
+                sender.moneyAmount -= money;
+                // Add item to receiver's inventory
+                if (string.IsNullOrEmpty(receiver.food))
+                    receiver.food = item;
+                else
+                    receiver.weapon = item;
+                // Remove money from receiver's account
+                receiver.moneyAmount += money;
+            }
+        }

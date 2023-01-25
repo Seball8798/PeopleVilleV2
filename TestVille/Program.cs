@@ -19,8 +19,9 @@ public class Program
         location.streetNumber = 130;
 
         inhibitans.InhibitansProfil(inhibitans);
-        Console.WriteLine("\nlokation " + location.streetName);
+        //Console.WriteLine("\nlokation " + location.streetName);
 
+        Console.ReadLine();
         //Console.WriteLine(inhibitans);
         //Console.WriteLine("Inhibitans Name: " + inhibitans.name);
         //Console.WriteLine("Food: " + inhibitans.food);

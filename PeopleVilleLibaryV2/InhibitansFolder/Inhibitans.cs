@@ -67,7 +67,9 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
 
         }
         // other properties and methods
-        public void Trade(Inhibitans sender, Inhibitans receiver, string item, int money)
+
+
+        public void Trade1(Inhibitans sender, Inhibitans receiver, string item, int money)
         {
             if ((sender.food == item || sender.weapon == item) && sender.moneyAmount >= money)
             {
@@ -76,6 +78,8 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
                     sender.food = "";
                 else
                     sender.weapon = "";
+
+
                 // Add money to sender's account
                 sender.moneyAmount -= money;
                 // Add item to receiver's inventory
@@ -88,8 +92,6 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
             }
         }
 
-
-
         public void InhibitansProfil(Inhibitans inhibitans)
         {
             //Food food = new Food();
@@ -101,27 +103,51 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
             List<string> WeaponList = weapon.WeaponList();
             List<string> foodList = food.FoodList();
             Random rand = new Random();
-            int randomIndex = rand.Next(0, foodList.Count);
-            moneyAmount = rand.Next(100, 10000);
-            string randomFood = foodList[randomIndex];
-            string randomWeapon = weapon.WeaponList()[randomIndex];
+            int randomTradeAmount = rand.Next(1);
 
-            Inhibitans inhibitant_Bob = new Inhibitans("Bob", randomFood, randomWeapon);
-            Inhibitans inhibitant_Mikkel = new Inhibitans("Mikkel", randomFood, randomWeapon);
-            Inhibitans inhibitant_Sebastian = new Inhibitans("Sebastian", randomFood, moneyAmount);
+
+            Inhibitans inhibitant_Bob = new Inhibitans("Bob", foodList[rand.Next(0, foodList.Count)], WeaponList[rand.Next(0, WeaponList.Count)], rand.Next(0, 10000));
+            Inhibitans inhibitant_Mikkel = new Inhibitans("Mikkel", foodList[rand.Next(0, foodList.Count)], WeaponList[rand.Next(0, WeaponList.Count)], rand.Next(0, 10000));
+            Inhibitans inhibitant_Sebastian = new Inhibitans("Sebastian", foodList[rand.Next(0, foodList.Count)], WeaponList[rand.Next(0, WeaponList.Count)], rand.Next(0, 10000));
+
+
+            // Test console Trade
+            inhibitant_Bob.Trade1(inhibitant_Bob, inhibitant_Mikkel, inhibitant_Bob.food, 50);
 
             //test in console
             foreach (var item in inhibitant_Sebastian.ToString())
             {
                 Console.Write(item);
             }
-            
+            Console.WriteLine("\n");
+            foreach (var item1 in inhibitant_Mikkel.ToString())
+            {
+                Console.Write(item1);
+                
+            }
+
+            Console.WriteLine("\n");
+            foreach (var item2 in inhibitant_Bob.ToString())
+            {
+                Console.Write(item2);
+
+            }
+
+
+            //Comparaison 2 Objects
+            xx
+
+
         }
 
         public override string ToString()
         {
-            return $"Inhibitans name: {name}, Food: {food}, Weapon: {weapon}, Money: {moneyAmount}";
+            return $"Inhibitans name: {name}\n*Currently has 1 whole {food}\n*Owns an {weapon}\n*Has ${moneyAmount} in the bank.";
+            
         }
-
+        public void Trade(Inhibitans sender, Inhibitans receiver)
+        {
+            
+        }
     }
 }
