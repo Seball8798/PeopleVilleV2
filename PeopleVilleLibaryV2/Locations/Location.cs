@@ -29,32 +29,21 @@ namespace PeopleVilleLibraryV2.Location
 
         }
 
-
-        //public void AddInhabitant(Inhibitans inhabitant)
+        //public void Traffic()
         //{
-        //    Inhabitants.Add(inhabitant);
+
+        //    Food food = new Food();
+        //    Weapon weapon = new Weapon();
+        //    Inhibitans inhibitans1 = new Inhibitans();
+        //    Inhibitans inhibitans2 = new Inhibitans();
+
+        //    Days days = new Days();
+        //    Taxi taxi = new Taxi();
+        //    Train train = new Train();
+        //    Supermarket supermarket = new Supermarket();
+        //    Restaurant restaurant = new Restaurant();
+        //    Random rnd = new Random();
+
         //}
-
-        public void Traffic()
-        {
-
-            Food food = new Food();
-            Weapon weapon = new Weapon();
-            Inhibitans inhibitans1 = new Inhibitans();
-            Inhibitans inhibitans2 = new Inhibitans();
-
-            Days days = new Days();
-            Taxi taxi = new Taxi();
-            Train train = new Train();
-            Supermarket supermarket = new Supermarket();
-            Restaurant restaurant = new Restaurant();
-            Random rnd = new Random();
-
-            weapon.WeaponList();
-            food.FoodList();
-
-            //inhibitans1.InhibitansProfil(inhibitans1);
-            //inhibitans1.InhibitansProfil(inhibitans2);
-        }
     }
 }

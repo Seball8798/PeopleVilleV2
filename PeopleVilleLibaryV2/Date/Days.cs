@@ -25,8 +25,8 @@ namespace PeopleVilleLibraryV2.Date
         public Days()
         {
 
-            WeekDays weekDays = (WeekDays)(new Random()).Next(0, 7);
-            switch (weekDays)
+            WeekDays startingDay = (WeekDays)(new Random()).Next(0, 7);
+            switch (startingDay)
             {
                 case WeekDays.Monday:
                     Console.WriteLine("Monday");

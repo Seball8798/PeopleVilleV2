@@ -10,16 +10,5 @@ namespace PeopleVilleLibraryV2.iItems
     {
         string name { get; set; }
         int price { get; set; }
-
-        public string pickup()
-        {
-
-             return "";
-        }
-        public string transfer()
-        {
-            return "";
-
-        }
     }
 }

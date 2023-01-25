@@ -12,18 +12,6 @@ namespace PeopleVilleLibraryV2.iItems
 
         public int price { get; set; }
 
-        public string pickup()
-        {
-
-            return "";
-        }
-
-        public string transfer()
-        {
-            return "";
-
-        }
-
         public List<string> WeaponList()
         {
             List<string> weapon = new List<string>();

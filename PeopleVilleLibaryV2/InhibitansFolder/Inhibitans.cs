@@ -66,10 +66,29 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
         {
 
         }
-        public void trade()
+        // other properties and methods
+        public void Trade(Inhibitans sender, Inhibitans receiver, string item, int money)
         {
-
+            if ((sender.food == item || sender.weapon == item) && sender.moneyAmount >= money)
+            {
+                //Remove item from sender's inventory
+                if (sender.food == item)
+                    sender.food = "";
+                else
+                    sender.weapon = "";
+                // Add money to sender's account
+                sender.moneyAmount -= money;
+                // Add item to receiver's inventory
+                if (string.IsNullOrEmpty(receiver.food))
+                    receiver.food = item;
+                else
+                    receiver.weapon = item;
+                // Remove money from receiver's account
+                receiver.moneyAmount += money;
+            }
         }
+
+
 
         public void InhibitansProfil(Inhibitans inhibitans)
         {
@@ -83,10 +102,16 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
             List<string> foodList = food.FoodList();
             Random rand = new Random();
             int randomIndex = rand.Next(0, foodList.Count);
+            moneyAmount = rand.Next(100, 10000);
             string randomFood = foodList[randomIndex];
             string randomWeapon = weapon.WeaponList()[randomIndex];
+
             Inhibitans inhibitant_Bob = new Inhibitans("Bob", randomFood, randomWeapon);
-            foreach (var item in inhibitant_Bob.ToString())
+            Inhibitans inhibitant_Mikkel = new Inhibitans("Mikkel", randomFood, randomWeapon);
+            Inhibitans inhibitant_Sebastian = new Inhibitans("Sebastian", randomFood, moneyAmount);
+
+            //test in console
+            foreach (var item in inhibitant_Sebastian.ToString())
             {
                 Console.Write(item);
             }
@@ -95,7 +120,7 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
 
         public override string ToString()
         {
-            return $"Inhibitans name: {name}, Food: {food}, Weapon: {weapon}";
+            return $"Inhibitans name: {name}, Food: {food}, Weapon: {weapon}, Money: {moneyAmount}";
         }
 
     }

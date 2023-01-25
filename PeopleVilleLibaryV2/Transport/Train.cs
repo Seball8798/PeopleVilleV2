@@ -18,25 +18,25 @@ namespace PeopleVilleLibraryV2.Transport
             switch (retningA)
             {
                 case 1:
-                    Console.WriteLine("---> St Odense");
+                    Console.WriteLine("From St Odense");
                     break;
                 case 2:
-                    Console.WriteLine("---> St Ondesvej");
+                    Console.WriteLine("From St Ondesvej");
                     break;
                 case 3:
-                    Console.WriteLine("---> St Ringsvej");
+                    Console.WriteLine("From St Ringsvej");
                     break;
                 case 4:
-                    Console.WriteLine("---> St Lunekovvej");
+                    Console.WriteLine("From St Lunekovvej");
                     break;
                 case 5:
-                    Console.WriteLine("---> St Blommevej");
+                    Console.WriteLine("From St Blommevej");
                     break;
                 case 6:
-                    Console.WriteLine("---> St Ballørup");
+                    Console.WriteLine("From St Ballørup");
                     break;
                 case 7:
-                    Console.WriteLine("---> St Ryparken");
+                    Console.WriteLine("From St Ryparken");
                     break;
             }
         }
@@ -49,25 +49,25 @@ namespace PeopleVilleLibraryV2.Transport
             switch (retningStop)
             {
                 case 1:
-                    Console.WriteLine("Ø St Odense");
+                    Console.WriteLine("Stop St Odense");
                     break;
                 case 2:
-                    Console.WriteLine("Ø St Ondesvej");
+                    Console.WriteLine("Stop St Ondesvej");
                     break;
                 case 3:
-                    Console.WriteLine("ØSt Ringsvej");
+                    Console.WriteLine("Stop Ringsvej");
                     break;
                 case 4:
-                    Console.WriteLine("Ø St Lunekovvej");
+                    Console.WriteLine("Stop St Lunekovvej");
                     break;
                 case 5:
-                    Console.WriteLine("Ø St Blommevej");
+                    Console.WriteLine("Stop St Blommevej");
                     break;
                 case 6:
-                    Console.WriteLine("Ø St Ballørup");
+                    Console.WriteLine("Stop St Ballørup");
                     break;
                 case 7:
-                    Console.WriteLine("Ø St Ryparken");
+                    Console.WriteLine("Stop St Ryparken");
                     break;
             }
         }

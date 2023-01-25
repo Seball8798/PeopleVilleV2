@@ -16,26 +16,26 @@ namespace PeopleVilleLibraryV2.Transport
             switch (retning)
             {
                 case 1:
-                    Console.WriteLine("---> Restaurant");
+                    Console.WriteLine("Restaurant");
                     break;
                 case 2:
-                    Console.WriteLine("---> Supermarket");
-                    break;
-                case 3:
-                    Console.WriteLine("---> Bank");
-                    break;
-                case 4:
-                    Console.WriteLine("---> Station");
-                    break;
-                case 5:
-                    Console.WriteLine("---> Apotek");
-                    break;
-                case 6:
-                    Console.WriteLine("---> Bibliotek");
-                    break;
-                case 7:
-                    Console.WriteLine("---> Centrum");
-                    break;
+                    Console.WriteLine("From Supermarket");
+                    break;             
+                case 3:                
+                    Console.WriteLine("From Bank");
+                    break;             
+                case 4:                
+                    Console.WriteLine("From Station");
+                    break;             
+                case 5:                
+                    Console.WriteLine("From Apotek");
+                    break;             
+                case 6:                
+                    Console.WriteLine("From Bibliotek");
+                    break;             
+                case 7:                
+                    Console.WriteLine("From Centrum");
+                    break;             
             }
         }
 
@@ -48,25 +48,25 @@ namespace PeopleVilleLibraryV2.Transport
             switch (stop)
             {
                 case 1:
-                    Console.WriteLine("Ø Restaurant");
+                    Console.WriteLine("Stop Restaurant");
                     break;
                 case 2:
-                    Console.WriteLine("Ø Supermarket");
+                    Console.WriteLine("Stop Supermarket");
                     break;
                 case 3:
-                    Console.WriteLine("Ø Bank");
+                    Console.WriteLine("Stop Bank");
                     break;
                 case 4:
-                    Console.WriteLine("Ø Station");
+                    Console.WriteLine("Stop Station");
                     break;
                 case 5:
-                    Console.WriteLine("Ø Apotek");
+                    Console.WriteLine("Stop Apotek");
                     break;
                 case 6:
-                    Console.WriteLine("Ø Bibliotek");
+                    Console.WriteLine("Stop Bibliotek");
                     break;
                 case 7:
-                    Console.WriteLine("Ø Centrum");
+                    Console.WriteLine("Stop Centrum");
                     break;
             }
         }
