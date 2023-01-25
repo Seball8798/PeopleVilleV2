@@ -15,7 +15,7 @@ namespace PeopleVilleLibraryV2.iItems
         public List<string> WeaponList()
         {
             List<string> weapon = new List<string>();
-            weapon.Add("AK47"); weapon.Add("Grenade"); weapon.Add("Knife"); weapon.Add("Baseball Bat"); weapon.Add("Tank");
+            weapon.Add("AK47"); weapon.Add("Grenade"); weapon.Add("Knife"); weapon.Add("Axe"); weapon.Add("Tank");
             return weapon;
 
         }
