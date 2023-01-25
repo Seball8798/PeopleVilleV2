@@ -76,7 +76,7 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
             Random rand = new Random();
             int randomIndex = rand.Next(0, foodList.Count);
             string randomFood = foodList[randomIndex];
-            Inhibitans inhibitans = new Inhibitans("John", randomFood);
+            Inhibitans inhibitans1 = new Inhibitans("John", randomFood);
 
         }
 
