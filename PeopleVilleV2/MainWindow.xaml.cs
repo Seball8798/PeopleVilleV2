@@ -14,23 +14,31 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PeopleVilleLibraryV2;
+using PeopleVilleLibraryV2.Date;
 using PeopleVilleLibraryV2.InhibitansFolder;
 using PeopleVilleLibraryV2.Transport;
+using static PeopleVilleLibraryV2.Date.Days;
 
 namespace PeopleVilleV2
 {
    
     public partial class MainWindow : Window
     {
+        int dayIndex;
+        private readonly Days.WeekDays[] weekDays = (Days.WeekDays[])Enum.GetValues(typeof(Days.WeekDays));
         public MainWindow()
         {
             InitializeComponent();
 
+
         }
 
-        private void InputFile_Click(object sender, RoutedEventArgs e)
+        private void SwitchDay_Click(object sender, RoutedEventArgs e)
         {
+            if (dayIndex >= weekDays.Length)
+                dayIndex = 0;
 
+            DisplayDay.Content = weekDays[dayIndex++].ToString();
         }
 
         private void OutputFile_Click(object sender, RoutedEventArgs e)

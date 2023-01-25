@@ -73,7 +73,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="1" Grid.RowSpan="2">
-                    <Button  x:Name="InputFile" Click="InputFile_Click" Content="Switch Day" VerticalAlignment="Top" Background="#FF373544" Foreground="White" BorderBrush="#A3ABBD"  Margin="35,13,619,0" Height="26" MinHeight="25" MaxHeight="25" MinWidth="95" MaxWidth="95" FontSize="14" FontFamily="Bookman Old Style">
+                    <Button  x:Name="DayButton" Click="SwitchDay_Click" Content="Switch Day" VerticalAlignment="Top" Background="#FF373544" Foreground="White" BorderBrush="#A3ABBD"  Margin="5,39,665,0" Height="26" MinHeight="25" MaxHeight="25" MinWidth="95" MaxWidth="95" FontSize="14" FontFamily="Bookman Old Style">
 
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -81,6 +81,8 @@
                             </Style>
                         </Button.Resources>
                     </Button>
+                    <Label Content="Current day:  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="0,8,0,0" VerticalAlignment="Top" Width="100"/>
+                    <Label Name="DisplayDay" Content="Monday  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="96,8,0,0" VerticalAlignment="Top" Width="100"/>
                 </Grid>
                 <Grid  Grid.RowSpan="5" Margin="4,30,4,62" Height="350" Width="550">
                     <DataGrid Grid.Row="0" Grid.Column="0" Padding="10" AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="18" Foreground="#FF373544" Margin="50,35,50,35" Background="#FF36353E" ItemsSource="{Binding People}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style">
@@ -96,5 +98,6 @@
                 </Grid>
             </Grid>
         </Grid>
+        <Label Content="Label"/>
     </Grid>
 </Window>

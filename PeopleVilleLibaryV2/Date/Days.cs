@@ -20,7 +20,7 @@ namespace PeopleVilleLibraryV2.Date
         }
         public enum WeekDays
         {
-            Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+            Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Monday
         }
         public Days()
         {
