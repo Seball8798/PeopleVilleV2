@@ -35,26 +35,26 @@ namespace PeopleVilleLibraryV2.iItems
 
             //}
 
-            Random rand = new Random();
-            int eventNum = rand.Next(0, 5);
-            switch (eventNum)
-            {
-                case 1:
-                    Console.WriteLine(weapon[0].ToString());
-                    break;
-                case 2:
-                    Console.WriteLine(weapon[1].ToString());
-                    break;
-                case 3:
-                    Console.WriteLine(weapon[2].ToString());
-                    break;
-                case 4:
-                    Console.WriteLine(weapon[3].ToString());
-                    break;
-                default:
-                    Console.WriteLine(weapon[4].ToString());
-                    break;
-            }
+            //Random rand = new Random();
+            //int eventNum = rand.Next(0, 5);
+            //switch (eventNum)
+            //{
+            //    case 1:
+            //        Console.WriteLine(weapon[0].ToString());
+            //        break;
+            //    case 2:
+            //        Console.WriteLine(weapon[1].ToString());
+            //        break;
+            //    case 3:
+            //        Console.WriteLine(weapon[2].ToString());
+            //        break;
+            //    case 4:
+            //        Console.WriteLine(weapon[3].ToString());
+            //        break;
+            //    default:
+            //        Console.WriteLine(weapon[4].ToString());
+            //        break;
+            //}
         }
 
     }

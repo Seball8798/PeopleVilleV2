@@ -67,15 +67,17 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
 
         public void InhibitansProfil(Inhibitans inhibitans)
         {
+            //Food food = new Food();
+            //Weapon weapon = new Weapon();
+            //food.FoodList();
+            //weapon.WeaponList();
             Food food = new Food();
-            Weapon weapon = new Weapon();
-            food.FoodList();
-            weapon.WeaponList();
+            List<string> foodList = food.FoodList();
+            Random rand = new Random();
+            int randomIndex = rand.Next(0, foodList.Count);
+            string randomFood = foodList[randomIndex];
+            Inhibitans inhibitans = new Inhibitans("John", randomFood);
 
-
-
-
-            //inhibitans.TrainAction();
         }
 
         public override string ToString()
