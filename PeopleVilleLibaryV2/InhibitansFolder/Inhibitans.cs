@@ -14,40 +14,46 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
     {
         public string name { get; set; }
         public string food;
-        public List<string> Item;
+        public string weapon;
         Random rand = new Random();
-        public int MoneyAmount;
+        public int moneyAmount;
         Taxi Taxi = new Taxi();
 
 
 
-        public Inhibitans(string name, string food, List<string> item, int moneyAmount)
+        public Inhibitans(string Name, string Food, string Weapon, int MoneyAmount)
         {
-            name = name;
-            food = food;
-            Item = item;
-            MoneyAmount = moneyAmount;
+            name = Name;
+            food = Food;
+            weapon = Weapon;
+            moneyAmount = MoneyAmount;
         }
 
-        public Inhibitans(string name, string food, int moneyAmount)
+        public Inhibitans(string Name, string Food, int MoneyAmount)
         {
-            name = name;
-            food = food;
-            MoneyAmount = moneyAmount;
+            name = Name;
+            food = Food;
+            moneyAmount = MoneyAmount;
         }
-        public Inhibitans(string name, int moneyAmount)
+        public Inhibitans(string Name, string Food, string Weapon)
         {
-            name = name;
-            MoneyAmount = moneyAmount;
+            name = Name;
+            food = Food;
+            weapon = Weapon;
         }
-        public Inhibitans(string name, string food)
+        public Inhibitans(string Name, int MoneyAmount)
         {
-            name = name;
-            food = food;
+            name = Name;
+            moneyAmount = MoneyAmount;
         }
-        public Inhibitans(string name)
+        public Inhibitans(string Name, string Food)
         {
-            name = name;
+            name = Name;
+            food = Food;
+        }
+        public Inhibitans(string Name)
+        {
+            name = Name;
         }
         public Inhibitans()
         {
@@ -72,17 +78,24 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
             //food.FoodList();
             //weapon.WeaponList();
             Food food = new Food();
+            Weapon weapon = new Weapon();
+            List<string> WeaponList = weapon.WeaponList();
             List<string> foodList = food.FoodList();
             Random rand = new Random();
             int randomIndex = rand.Next(0, foodList.Count);
             string randomFood = foodList[randomIndex];
-            Inhibitans inhibitans1 = new Inhibitans("John", randomFood);
-
+            string randomWeapon = weapon.WeaponList()[randomIndex];
+            Inhibitans inhibitant_Bob = new Inhibitans("Bob", randomFood, randomWeapon);
+            foreach (var item in inhibitant_Bob.ToString())
+            {
+                Console.Write(item);
+            }
+            
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"Inhibitans name: {name}, Food: {food}, Weapon: {weapon}";
         }
 
     }
