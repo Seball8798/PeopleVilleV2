@@ -9,34 +9,39 @@ namespace PeopleVilleLibraryV2.Location
 {
     public class Restaurant : Location
     {
-        //List<string> Food;
+        
+        public List<string> Locations { get; set; }
 
+            public Restaurant(string streetname, int streetnumber) : base(streetname, streetnumber)
+            {
+                Locations = RestaurantsList();
+            }
 
-        //public Restaurant(string streetName, int streetNumber, List<string> food) : base(streetName, streetNumber)
-        //{
-        //    Food = food;
-        //}
+            public Restaurant(string streetname) : base(streetname)
+            {
+                Locations = RestaurantsList();
+            }
 
-        //public Restaurant(string streetName, int streetNumber) : base(streetName, streetNumber)
-        //{
+            public Restaurant()
+            {
+                Locations = RestaurantsList();
+            }
 
-        //}
+            public List<string> RestaurantsList()
+            {
+                List<string> restaurants = new List<string>();
+                restaurants.Add("McDonald's");
+                restaurants.Add("Sunset");
+                restaurants.Add("KFC");
+                restaurants.Add("Ali's Kebab");
+                restaurants.Add("Max Burger's");
+                return restaurants;
+            }
 
-        //public Restaurant(string streetName) : base(streetName)
-        //{
-
-        //}
-
-        //public Restaurant()
-        //{
-
-        //}
-
-        public List<string> RestaurantsList()
-        {
-            List<string> restaurants = new List<string>();
-            restaurants.Add("McDonald's"); restaurants.Add("Sunset"); restaurants.Add("KFC"); restaurants.Add("Ali's Kebab"); restaurants.Add("Max Burger's");
-            return restaurants;
-        }
+            public override void Medarbejder()
+            {
+                Console.WriteLine("Vi er medarbejder fra Restaurant.");
+            }
     }
 }
+

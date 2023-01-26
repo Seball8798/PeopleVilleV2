@@ -9,11 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleVilleLibraryV2", "Peo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestVille", "TestVille\TestVille.csproj", "{FFDF5A5B-6A0E-43FB-86D9-F10C521CC4C0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF2E1C6C-5158-40AC-9380-232DB4BE37E4}"
-	ProjectSection(SolutionItems) = preProject
-		TradeSave.txt = TradeSave.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

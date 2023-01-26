@@ -8,42 +8,28 @@ namespace PeopleVilleLibraryV2.Location
 {
     public class Location
     {
-
+        public List<string> Locations { get; set; }
         public string streetName;
         public int streetNumber;
 
-        public Location(string streetName, int streetNumber)
+        public Location(string streetname, int streetnumber)
         {
-            this.streetName = streetName;
-            this.streetNumber = streetNumber;
-
+            Locations = new List<string>();
         }
-        public Location(string streetName)
-        {
-            this.streetName = streetName;
 
+        public Location(string streetname)
+        {
+            Locations = new List<string>();
         }
 
         public Location()
         {
-
+            Locations = new List<string>();
         }
 
-        //public void Traffic()
-        //{
-
-        //    Food food = new Food();
-        //    Weapon weapon = new Weapon();
-        //    Inhibitans inhibitans1 = new Inhibitans();
-        //    Inhibitans inhibitans2 = new Inhibitans();
-
-        //    Days days = new Days();
-        //    Taxi taxi = new Taxi();
-        //    Train train = new Train();
-        //    Supermarket supermarket = new Supermarket();
-        //    Restaurant restaurant = new Restaurant();
-        //    Random rnd = new Random();
-
-        //}
+        public virtual void Medarbejder()
+        {
+            Console.WriteLine("Vi er medarbejder fra hele location.");
+        }
     }
 }

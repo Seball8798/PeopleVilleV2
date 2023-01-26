@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PeopleVilleV2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#212121" >
+        Title="MainWindow" ResizeMode="NoResize" Height="450" Width="800" Background="#212121" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -31,7 +31,7 @@
                 </TextBlock.Style>
                 <TextBlock>
                 </TextBlock>People Village</TextBlock>
-            
+
             <TextBlock Foreground="Black" FontWeight="DemiBold" VerticalAlignment="Center" FontSize="16" Padding="4" FontFamily="fonts/#Dosis" OpacityMask="Black" HorizontalAlignment="Left">
                 <TextBlock.Style>
                     <Style/>
@@ -40,7 +40,6 @@
                 </TextBlock>People Village</TextBlock>
 
             <Grid Grid.Column="1" HorizontalAlignment="Right">
-                <!-- Gross -->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2"/>
                     <ColumnDefinition Width="2"/>
@@ -84,18 +83,33 @@
                     <Label Content="Current day:  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="0,8,0,0" VerticalAlignment="Top" Width="100"/>
                     <Label Name="DisplayDay" Content="Monday  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="96,8,0,0" VerticalAlignment="Top" Width="100"/>
                 </Grid>
-                <Grid  Grid.RowSpan="5" Margin="4,50,4,62" Height="350" Width="660">
-                    <DataGrid x:Name="PeopleGrid" Grid.Row="0" Grid.Column="0" Padding="10" AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="17" Foreground="#FF373544" Margin="50,35,50,35" Background="#FF36353E" ItemsSource="{Binding inhibitantList}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style" SelectionChanged="DataGrid_SelectionChanged">
+                <Grid  Grid.RowSpan="3" Margin="100,50,100,1" Width="600">
+                    <DataGrid x:Name="PeopleGrid"  Grid.Row="0"  Padding="10"  AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="17" Foreground="#FF373544" Margin="50,-2,50,26" Background="#FF36353E" ItemsSource="{Binding inhibitantList}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style" SelectionChanged="DataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="First Name" FontSize="16" FontWeight="Light" Width="110" Binding="{Binding FirstName}" />
                             <DataGridTextColumn Header="Location" FontSize="16" FontWeight="Light" Width="100" Binding="{Binding Location}" />
                             <DataGridTextColumn Header="Money" FontSize="16" FontWeight="Light" Width="85" Binding="{Binding Money}" />
                             <DataGridTextColumn Header="Food" FontSize="16" FontWeight="Light" Width="85" Binding="{Binding Food}" />
                             <DataGridTextColumn Header="Weapons" FontSize="16" FontWeight="Light" Width="90" Binding="{Binding Weapons}" />
-                            <DataGridCheckBoxColumn Header="Trade" Width="65" Binding="{Binding Trade}"></DataGridCheckBoxColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <!--<Label Name="OutPut"  HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="20" Foreground="#F3FAFF" Margin="50,40,50,-114" Background="#FF30295F"/>-->
+                    <Button x:Name="labelButton"  Content="Pick Item To Trade" Margin="200,270,200,50"  Click="Button_Click_1" FontFamily="Bookman Old Style">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button x:Name="TradeButton"  Content="Trade" Margin="348,270,52,50"  Width="50" Click="TradeButton_Click" FontFamily="Bookman Old Style">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <StackPanel x:Name="TradeStackpanel" HorizontalAlignment="Left" Height="80" Margin="137,177,0,0" VerticalAlignment="Top" Width="347"/>
                 </Grid>
             </Grid>
         </Grid>

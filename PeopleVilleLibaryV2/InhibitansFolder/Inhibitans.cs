@@ -92,13 +92,27 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
             LocationList.AddRange(supermarket.SupermarketsList());
             LocationList.AddRange(restaurant.RestaurantsList());
             Random rand = new Random();
-            int randomTradeAmount = rand.Next(1);
+
+            var foodNu1 = foodList[rand.Next(0, foodList.Count)];
+            var foodNu2 = foodList[rand.Next(0, foodList.Count)];
+            var foodNu3 = foodList[rand.Next(0, foodList.Count)];
+
+            var weapon1 = WeaponList[rand.Next(0, WeaponList.Count)];
+            var weapon2 = WeaponList[rand.Next(0, WeaponList.Count)];
+            var weapon3 = WeaponList[rand.Next(0, WeaponList.Count)];
+
+            var rndMoney1 = rand.Next(0, 10000);
+            var rndMoney2 = rand.Next(0, 10000);
+            var rndMoney3 = rand.Next(0, 10000);
+
+            var loc1 = LocationList[rand.Next(0, LocationList.Count)];
+            var loc2 = LocationList[rand.Next(0, LocationList.Count)];
+            var loc3 = LocationList[rand.Next(0, LocationList.Count)];
 
 
-            Inhibitans inhibitant_Bob = new Inhibitans("Bob", foodList[rand.Next(0, foodList.Count)], WeaponList[rand.Next(0, WeaponList.Count)], rand.Next(0, 10000), LocationList[rand.Next(0, LocationList.Count)]);
-            Inhibitans inhibitant_Mikkel = new Inhibitans("Mikkel", foodList[rand.Next(0, foodList.Count)], WeaponList[rand.Next(0, WeaponList.Count)], rand.Next(0, 10000), LocationList[rand.Next(0, LocationList.Count)]);
-            Inhibitans inhibitant_Sebastian = new Inhibitans("Sebastian", foodList[rand.Next(0, foodList.Count)], WeaponList[rand.Next(0, WeaponList.Count)], rand.Next(0, 10000), LocationList[rand.Next(0, LocationList.Count)]);
-
+            Inhibitans inhibitant_Bob = new Inhibitans("Bob", foodNu1, weapon1, rndMoney1, loc1);
+            Inhibitans inhibitant_Mikkel = new Inhibitans("Mikkel", foodNu2, weapon2, rndMoney2, loc2);
+            Inhibitans inhibitant_Sebastian = new Inhibitans("Sebastian", foodNu3, weapon3, rndMoney3, loc3);
 
             //Før Trade
             Console.WriteLine("-------------------- -------- -------------------------");
@@ -180,7 +194,6 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
         public override string ToString()
         {
             return $"Inhibitans name: {name}\n*Currently has 1 whole {food}\n*Owns an {weapon}\n*Has ${moneyAmount} in the bank.";
-            
         }
         public void Trade(Inhibitans sender, Inhibitans receiver)
         {

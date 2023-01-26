@@ -15,7 +15,18 @@ public class Program
         Console.ReadLine();
 
 
+        Console.WriteLine();
+        Console.WriteLine();
 
+        Console.WriteLine("_______________Polymorphism________________");
+        Console.WriteLine();
+        Location location = new Location();
+        Supermarket supermarket = new Supermarket();
+        Restaurant restaurant = new Restaurant();
+
+        location.Medarbejder();
+        supermarket.Medarbejder();
+        restaurant.Medarbejder();
 
     }
 }
