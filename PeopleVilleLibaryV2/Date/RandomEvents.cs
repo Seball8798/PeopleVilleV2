@@ -8,62 +8,21 @@ namespace PeopleVilleLibraryV2.Date
 {
     public class RandomEvents
     {
-        // Random events
-        public RandomEvents()
+        public string GetRandomEvent()
         {
-            Random rand= new Random();
+            Random rand = new Random();
             int eventNum = rand.Next(1, 4);
             switch (eventNum)
             {
                 case 1:
-                    Console.WriteLine("");
-                    break;
+                    return ",  The bank has been robbed!";
                 case 2:
-                    Console.WriteLine("");
-                    break;
+                    return ",  A new supermarket has opened in the city";
                 case 3:
-                    Console.WriteLine("");
-                    break;
+                    return ",  There is a free concert happening in the park tonight";
                 default:
-                    Console.WriteLine("");
-                    break;
+                    return ",  Nothing interesting happening today";
             }
-
-        }
-        public enum WeekDays
-        {
-            Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Monday
-        }
-        public void Days()
-        {
-
-            WeekDays startingDay = (WeekDays)(new Random()).Next(0, 7);
-            switch (startingDay)
-            {
-                case WeekDays.Monday:
-                    Console.WriteLine("The bank has been robbed!");
-                    break;
-                case WeekDays.Tuesday:
-                    Console.WriteLine("A new supermarket has opened in the city");
-                    break;
-                case WeekDays.Wednesday:
-                    Console.WriteLine("There is a free concert happening in the park tonight");
-                    break;
-                case WeekDays.Thursday:
-                    Console.WriteLine("");
-                    break;
-                case WeekDays.Friday:
-                    Console.WriteLine("Friday");
-                    break;
-                case WeekDays.Saturday:
-                    Console.WriteLine("Saturday");
-                    break;
-                default:
-                    Console.WriteLine("Nothing interesting happening today");
-                    break; 
-            }
-
-
         }
     }
 }

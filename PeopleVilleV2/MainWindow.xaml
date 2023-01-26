@@ -81,7 +81,7 @@
                         </Button.Resources>
                     </Button>
                     <Label Content="Current day:  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="0,8,0,0" VerticalAlignment="Top" Width="100"/>
-                    <Label Name="DisplayDay" Content="Monday  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="96,8,0,0" VerticalAlignment="Top" Width="100"/>
+                    <Label Name="DisplayDay" Content="Monday  " Foreground="White" FontSize="13" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="96,8,0,0" VerticalAlignment="Top" Width="500"/>
                 </Grid>
                 <Grid  Grid.RowSpan="3" Margin="100,50,100,1" Width="600">
                     <DataGrid x:Name="PeopleGrid"  Grid.Row="0"  Padding="10"  AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="17" Foreground="#FF373544" Margin="50,-2,50,26" Background="#FF36353E" ItemsSource="{Binding inhibitantList}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style" SelectionChanged="DataGrid_SelectionChanged">

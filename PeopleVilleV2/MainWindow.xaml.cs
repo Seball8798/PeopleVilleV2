@@ -36,26 +36,17 @@ namespace PeopleVilleV2
     {
         int dayIndex;
         private readonly Days.WeekDays[] weekDays = (Days.WeekDays[])Enum.GetValues(typeof(Days.WeekDays));
-        
+
         public MainWindow()
-        {
-            
-            
-            
+        { 
             InitializeComponent();
-            Inhibitans inhibitans = new Inhibitans();
-            PeopleGrid.DataContext = inhibitans.weapon;
             InitializeInhibitans();
-            
-            
-
-           
-            
-
         }
 
         public List<InhibitansDataModel> inhibitansList = new List<InhibitansDataModel>();
         public Random rand = new Random();
+        public RandomEvents randomEvents = new RandomEvents();
+        public Inhibitans inhibitans = new Inhibitans();
 
 
         private void InitializeInhibitans()
@@ -100,7 +91,7 @@ namespace PeopleVilleV2
             PeopleGrid.ItemsSource = inhibitansList;
         }
         private void SwitchDay_Click(object sender, RoutedEventArgs e)
-        {            Inhibitans inhibitans = new Inhibitans();
+        {            
             inhibitans.InhibitansProfil();
 
 
@@ -108,6 +99,7 @@ namespace PeopleVilleV2
                 dayIndex = 0;
 
             DisplayDay.Content = weekDays[dayIndex++].ToString();
+            DisplayDay.Content += randomEvents.GetRandomEvent();
             //MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Next day", System.Windows.MessageBoxButton.YesNo);
 
             //if (messageBoxResult == MessageBoxResult.Yes)
