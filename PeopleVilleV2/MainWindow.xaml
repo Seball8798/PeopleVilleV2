@@ -82,21 +82,26 @@
                     </Button>
                     <Label Content="Current day:  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="0,8,0,0" VerticalAlignment="Top" Width="100"/>
                     <Label Name="DisplayDay" Content="Monday  " Foreground="White" FontSize="13" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="96,8,0,0" VerticalAlignment="Top" Width="500"/>
-                    <Button  x:Name="aiseEventButton" Click="RaiseEventButton_Click" Content="New Event" VerticalAlignment="Top" Background="#FF373544" Foreground="White" BorderBrush="#A3ABBD"  Margin="665,39,5,0" Height="26" MinHeight="25" MaxHeight="25" MinWidth="95" MaxWidth="95" FontSize="14" FontFamily="Bookman Old Style"/>
+                    <Button  x:Name="aiseEventButton" Click="RaiseEventButton_Click" Content="New Event" VerticalAlignment="Top" Background="#FF373544" Foreground="White" BorderBrush="#A3ABBD"  Margin="667,39,3,0" Height="26" MinHeight="25" MaxHeight="25" MinWidth="95" MaxWidth="95" FontSize="14" FontFamily="Bookman Old Style">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                     <Label x:Name="eventlabel" Content="" Foreground="White" FontSize="13" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="415,3,0,0" VerticalAlignment="Top" Width="366"/>
-                
-            </Grid>
+                </Grid>
                 <Grid  Grid.RowSpan="3" Margin="100,50,100,1" Width="600">
-                    <DataGrid x:Name="PeopleGrid"  Grid.Row="0"  Padding="10"  AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="17" Foreground="#FF373544" Margin="50,-2,50,26" Background="#FF36353E" ItemsSource="{Binding inhibitantList}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style" SelectionChanged="DataGrid_SelectionChanged">
+                    <DataGrid x:Name="PeopleGrid"  Grid.Row="0"  Padding="10"  AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="17" Foreground="#FF373544" Margin="20,-2,30,26" Background="#FF36353E" ItemsSource="{Binding inhibitantList}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style" SelectionChanged="DataGrid_SelectionChanged">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="First Name" FontSize="16" FontWeight="Light" Width="110" Binding="{Binding FirstName}" />
-                            <DataGridTextColumn Header="Location" FontSize="16" FontWeight="Light" Width="100" Binding="{Binding Location}" />
-                            <DataGridTextColumn Header="Money" FontSize="16" FontWeight="Light" Width="85" Binding="{Binding Money}" />
-                            <DataGridTextColumn Header="Food" FontSize="16" FontWeight="Light" Width="85" Binding="{Binding Food}" />
-                            <DataGridTextColumn Header="Weapons" FontSize="16" FontWeight="Light" Width="90" Binding="{Binding Weapons}" />
+                            <DataGridTextColumn Header="First Name" FontSize="16" FontWeight="Light" Width="110" Binding="{Binding FirstName}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="Location" FontSize="16" FontWeight="Light" Width="100" Binding="{Binding Location}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Money" FontSize="16" FontWeight="Light" Width="85" Binding="{Binding Money}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="Food" FontSize="16" FontWeight="Light" Width="100" Binding="{Binding Food}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Weapons" FontSize="16" FontWeight="Light" Width="120" Binding="{Binding Weapons}" IsReadOnly="True"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="labelButton"  Content="mark two columns" Margin="285,270,135,50"  Click="Button_Click_1" FontFamily="Bookman Old Style" FontSize="16">
+                    <Button x:Name="labelButton"  Content="mark two columns" Margin="285,270,135,50"  Click="labelButton_Click" FontFamily="Bookman Old Style" FontSize="16" Background="White">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -104,7 +109,7 @@
                         </Button.Resources>
                     </Button>
 
-                    <Button x:Name="TradeButton"  Content="Trade" Margin="480,270,70,50"  Width="50" Click="TradeButton_Click" FontFamily="Bookman Old Style" FontSize="16">
+                    <Button x:Name="TradeButton"  Content="Trade" Margin="480,270,70,50"  Width="50" Click="TradeButton_Click" FontFamily="Bookman Old Style" FontSize="16" Background="White">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -112,8 +117,12 @@
                         </Button.Resources>
                     </Button>
 
-                    <StackPanel x:Name="TradeStackpanel" HorizontalAlignment="Left" Height="80" Margin="137,177,0,0" VerticalAlignment="Top" Width="347"/>
-                    <Button x:Name="transportbutton"  Content="Take Transport" Margin="90,270,348,50" Click="button_Click" FontFamily="Bookman Old Style" FontSize="16">
+                    <StackPanel x:Name="TradeStackpanel" HorizontalAlignment="Left" Height="100" Margin="109,157,0,0" VerticalAlignment="Top" Width="400">
+                        <Label Name="PickedName1" Content="" Height="35" Width="396" Foreground="White" FontFamily="Bookman Old Style"/>
+                        <Label x:Name="PickedName2" Content="" Height="30" Width="396" Foreground="White" FontFamily="Bookman Old Style"/>
+                        <Label x:Name="Transport" Content="" Height="30" Width="396" Foreground="White" FontFamily="Bookman Old Style"/>
+                    </StackPanel>
+                    <Button x:Name="transportbutton"  Tag="{Binding TrainObject}" Content="Take Transport" Margin="90,270,348,50" Click="button_Click" FontFamily="Bookman Old Style" FontSize="16" Background="White">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>

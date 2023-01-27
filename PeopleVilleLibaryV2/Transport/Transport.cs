@@ -8,7 +8,9 @@ namespace PeopleVilleLibraryV2.Transport
 {
     public abstract class Transport
     {
-        public abstract void Drive();
-        public abstract void Stop();
+        public string Location { get; set; }
+
+        public abstract string Drive();
+        public abstract string Stop();
     }
 }

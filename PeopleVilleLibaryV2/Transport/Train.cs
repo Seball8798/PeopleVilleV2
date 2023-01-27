@@ -10,38 +10,32 @@ namespace PeopleVilleLibraryV2.Transport
 {
     public string Location { get; set; }
 
-    public override void Drive() 
+    public override string Drive() 
     {
         Random rnd = new Random();
         int retningA = rnd.Next(1, 7);
 
         switch (retningA)
         {
-            case 1:
-                Location = "From St Odense";
-                break;
-            case 2:
-                Location = "From St Ondesvej";
-                break;
+                case 1:  
+                    return "From St Odense";
+                case 2:
+                    return  "From St Ondesvej";
                 case 3:
-                    Console.WriteLine("From St Ringsvej");
-                    break;
+                    return "From St Ringsvej";
                 case 4:
-                    Console.WriteLine("From St Lunekovvej");
-                    break;
+                    return "From St Lunekovvej";
                 case 5:
-                    Console.WriteLine("From St Blommevej");
-                    break;
+                    return "From St Blommevej";
                 case 6:
-                    Console.WriteLine("From St Ballørup");
-                    break;
+                    return "From St Ballørup";
                 case 7:
-                    Console.WriteLine("From St Ryparken");
-                    break;
+                    return "From St Ryparken";
             }
+            return "";
         }
 
-        public  override void Stop() 
+        public  override string Stop() 
         {
             Random rnd = new Random();
             int retningStop = rnd.Next(1, 7);
@@ -49,27 +43,21 @@ namespace PeopleVilleLibraryV2.Transport
             switch (retningStop)
             {
                 case 1:
-                    Console.WriteLine("Stop St Odense");
-                    break;
+                    return("Stop St Odense");
                 case 2:
-                    Console.WriteLine("Stop St Ondesvej");
-                    break;
+                    return ("Stop St Ondesvej");
                 case 3:
-                    Console.WriteLine("Stop Ringsvej");
-                    break;
+                    return ("Stop Ringsvej");
                 case 4:
-                    Console.WriteLine("Stop St Lunekovvej");
-                    break;
+                    return ("Stop St Lunekovvej");
                 case 5:
-                    Console.WriteLine("Stop St Blommevej");
-                    break;
+                    return ("Stop St Blommevej");
                 case 6:
-                    Console.WriteLine("Stop St Ballørup");
-                    break;
+                    return ("Stop St Ballørup");
                 case 7:
-                    Console.WriteLine("Stop St Ryparken");
-                    break;
+                    return ("Stop St Ryparken");
             }
+            return "";
         }
     }
 }

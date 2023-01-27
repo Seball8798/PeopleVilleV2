@@ -94,15 +94,14 @@ namespace PeopleVilleV2
 
     public partial class MainWindow : Window
     {
-        int dayIndex;
         private readonly Days.WeekDays[] weekDays = (Days.WeekDays[])Enum.GetValues(typeof(Days.WeekDays));
 
+        // mainwindow>>>>>>>>>>>>>>>>>>>>>>>
         public MainWindow()
         {
             InitializeComponent();
             InitializeInhibitans();
             MyEvent += HandleMyEvent;
-
         }
 
         public List<InhibitansDataModel> inhibitansList = new List<InhibitansDataModel>();
@@ -147,8 +146,20 @@ namespace PeopleVilleV2
             PeopleGrid.ItemsSource = inhibitansList;
 
         }
+
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            InitializeInhibitans();
+        }
+
+        public int dayIndex;
+        public int TransportIndex;
+
+
         private void SwitchDay_Click(object sender, RoutedEventArgs e)
         {
+
             var randMoney = rand.Next(0, 100);
 
             if (dayIndex >= weekDays.Length)
@@ -162,56 +173,94 @@ namespace PeopleVilleV2
 
             TradeStackpanel.Children.Clear();
         }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-            InitializeInhibitans();
-        }
+            Train train = new Train();
+            int randinhibit = rand.Next(0, 4);
+            string bob = inhibitansList[0].FirstName;
+            string Mikkel = inhibitansList[1].FirstName;
+            string Seb = inhibitansList[2].FirstName;
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+
+            if (randinhibit == 1)
+            {
+                string driveResult = train.Drive();
+                string stopResult = train.Stop();
+                string result = string.Format( "{0} Drove to: {1} \nStopped at:  {2}", bob, driveResult, stopResult);
+                MessageBox.Show(result);
+            }
+            else if (randinhibit == 2)
+            {
+                string driveResult = train.Drive();
+                string stopResult = train.Stop();
+                string result = string.Format("{0} Drove to:  {1} \nStopped at:  {2}", Mikkel, driveResult, stopResult);
+                MessageBox.Show(result);
+
+            }
+            else if (randinhibit == 3)
+            {
+                string driveResult = train.Drive();
+                string stopResult = train.Stop();
+                string result = string.Format("{0} Drove to:  {1} \nStopped at:  {2}", Seb, driveResult, stopResult);
+                MessageBox.Show(result);
+            }
+
+        }
+        //--------------------------------------Label Button--------------------------------------------------------------------------
+        private void labelButton_Click(object sender, RoutedEventArgs e)
         {
             Label newLabel1 = new Label();
             Label newLabel2 = new Label();
-            // Get the selected rows from the DataGrid
-            if (PeopleGrid.ItemsSource != null)
+            try
             {
-                if (PeopleGrid.SelectedItems.Count < 2 || PeopleGrid.SelectedItems.Count == 3)
+                // Get the selected rows from the DataGrid
+                if (PeopleGrid.ItemsSource != null)
                 {
-                    // Show an error message to the user
-                    MessageBox.Show("Please select two rows from the DataGrid before clicking the button", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-                var selectedRow1 = PeopleGrid.SelectedItems[0] as InhibitansDataModel;
-                var selectedRow2 = PeopleGrid.SelectedItems[1] as InhibitansDataModel;
-                // Check if the selected items are null
-                if (selectedRow1 == null || selectedRow2 == null)
-                {
-                    // Show an error message to the user
-                    MessageBox.Show("Please select two rows from the DataGrid before clicking the button", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
+                    if (PeopleGrid.SelectedItems.Count < 2 || PeopleGrid.SelectedItems.Count == 3)
+                    {
+                        // Show an error message to the user
+                        MessageBox.Show("Please select two rows from the DataGrid before clicking the button", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    var selectedRow1 = PeopleGrid.SelectedItems[0] as InhibitansDataModel;
+                    var selectedRow2 = PeopleGrid.SelectedItems[1] as InhibitansDataModel;
+                    // Check if the selected items are null
+                    if (selectedRow1 == null || selectedRow2 == null)
+                    {
+                        // Show an error message to the user
+                        MessageBox.Show("Please select two rows from the DataGrid before clicking the button", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
 
-                // Check if there are any existing labels in the TradeStackpanel
-                if (TradeStackpanel.Children.OfType<Label>().Count() == 2)
-                {
-                    // Remove the existing labels
-                    TradeStackpanel.Children.Clear();
-                }
-                // Create new labels
-                newLabel1.Foreground = new SolidColorBrush(Colors.White);
-                newLabel2.Foreground = new SolidColorBrush(Colors.White);
+                    // Check if there are any existing labels in the TradeStackpanel
+                    if (TradeStackpanel.Children.OfType<Label>().Count() == 2)
+                    {
+                        // Remove the existing labels
+                        TradeStackpanel.Children.Clear();
+                    }
+                    // Create new labels
+                    newLabel1.Foreground = new SolidColorBrush(Colors.White);
+                    newLabel2.Foreground = new SolidColorBrush(Colors.White);
 
-                // Set the labels' content to the selected rows' information
-                newLabel1.Content = $"Name: {selectedRow1.FirstName}, Food: {selectedRow1.Food}, Weapon: {selectedRow1.Weapons}, Money: {selectedRow1.Money}";
-                newLabel2.Content = $"Name: {selectedRow2.FirstName}, Food: {selectedRow2.Food}, Weapon: {selectedRow2.Weapons}, Money: {selectedRow2.Money}";
+                    // Set the labels' content to the selected rows' information
+                    PickedName1.Content = $"Name: {selectedRow1.FirstName}, Food: {selectedRow1.Food}, Weapon: {selectedRow1.Weapons}, Money: {selectedRow1.Money}";
+                    PickedName2.Content = $"Name: {selectedRow2.FirstName}, Food: {selectedRow2.Food}, Weapon: {selectedRow2.Weapons}, Money: {selectedRow2.Money}";
+
 
                 // Add the labels to the UI (for example, you could add them to a StackPanel)
-                TradeStackpanel.Children.Add(newLabel1);
-                TradeStackpanel.Children.Add(newLabel2);
+                TradeStackpanel.Children.Clear() ;
+                TradeStackpanel.Children.Add(PickedName1);
+                TradeStackpanel.Children.Add(PickedName2);
             }
         }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message);
+            }
+
+        }
         //------------------------------------Trade goes here-----------------------------------------------------//
-        public string foodTrade1;
+        public string Trade;
         private void TradeButton_Click(object sender, RoutedEventArgs e)
         {
             if (TradeStackpanel.Children.Count == 2)
@@ -229,45 +278,67 @@ namespace PeopleVilleV2
 
                 // Randomly decide which properties to trade
                 var random = new Random();
-                //var tradeFood = random.Next(2) == 0;
-                //var tradeWeapon = random.Next(2) == 0;
-                //var tradeMoney = random.Next(2) == 0;
 
                 // Make the trade
-                if (selectedCell1 != null && selectedCell2 != null && selectedCell1.Item != null && selectedCell2.Item != null)
+                var picked1 = PickedName1.Content;
+                var picked2 = PickedName2.Content;
+
+                string PickedString1 = picked1.ToString();
+                string PickedString2 = picked2.ToString();
+                int randomTrade = random.Next(0, 3);
+
+                if (randomTrade == 1)
                 {
-                    var tempFood = inhibitansList[0].Food;
-                    inhibitansList[0].Food = inhibitansList[1].Food;
-                    inhibitansList[1].Food = tempFood;
-                    foodTrade1 = $"Name: {inhibitansList[0].FirstName}, traded Food with {inhibitansList[1].FirstName}";
+                    if (PickedString1.Contains("Bob") && PickedString2.Contains("Mikkel") || PickedString2.Contains("Bob") && PickedString1.Contains("Mikkel"))
+                    {
+                        var tempFood = inhibitansList[0].Food;
+                        inhibitansList[0].Food = inhibitansList[1].Food;
+                        inhibitansList[1].Food = tempFood;
+                        Trade = $"Name: {inhibitansList[0].FirstName}, traded Food with {inhibitansList[1].FirstName}";
+                        MessageBox.Show(Trade, "Trade successful!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
-                //if (tradeWeapon)
-                //{
-                //    var tempWeapon = dataItem1.Weapons;
-                //    dataItem1.Weapons = dataItem2.Weapons;
-                //    dataItem2.Weapons = tempWeapon;
-                //}
-                //if (tradeMoney)
-                //{
-                //    var tempMoney = dataItem1.Money;
-                //    dataItem1.Money = dataItem2.Money;
-                //    dataItem2.Money = tempMoney;
-                //}
-
-                // Refresh the grid
-
-                // Show a message box to indicate that the trade was successful
-                MessageBox.Show(foodTrade1, "Trade successful!", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (randomTrade == 2)
+                {
+                    if (PickedString1.Contains("Bob") && PickedString2.Contains("Mikkel") || PickedString2.Contains("Bob") && PickedString1.Contains("Mikkel"))
+                    {
+                        var tempWeapon = inhibitansList[0].Weapons;
+                        inhibitansList[0].Weapons = inhibitansList[1].Weapons;
+                        inhibitansList[1].Weapons = tempWeapon;
+                        Trade = $"Name: {inhibitansList[0].FirstName}, traded weapon with {inhibitansList[1].FirstName}";
+                        MessageBox.Show(Trade, "Trade successful!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                if (randomTrade == 1)
+                {
+                    if (PickedString1.Contains("Sebastian") && PickedString2.Contains("Mikkel") || PickedString2.Contains("Sebastian") && PickedString1.Contains("Mikkel"))
+                    {
+                        var tempWeapon = inhibitansList[1].Weapons;
+                        inhibitansList[1].Weapons = inhibitansList[2].Weapons;
+                        inhibitansList[2].Weapons = tempWeapon;
+                        Trade = $"Name: {inhibitansList[1].FirstName}, traded weapon with {inhibitansList[2].FirstName}";
+                        MessageBox.Show(Trade, "Trade successful!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                if (randomTrade == 2)
+                {
+                    if (PickedString1.Contains("Sebastian") && PickedString2.Contains("Mikkel") || PickedString2.Contains("Sebastian") && PickedString1.Contains("Mikkel"))
+                    {
+                        var tempFood = inhibitansList[1].Food;
+                        inhibitansList[1].Food = inhibitansList[2].Food;
+                        inhibitansList[2].Food = tempFood;
+                        Trade = $"Name: {inhibitansList[1].FirstName}, traded Food with {inhibitansList[2].FirstName}";
+                        MessageBox.Show(Trade, "Trade successful!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
             }
             else
             {
                 // Show an error message if not enough cells are selected
                 MessageBox.Show("Please select two cells to make a trade", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-
-
         }
+       
         //-------------------------------EVENT Delgate------------------------------------------------------------------
 
         // Declare the delegate (what type of method will be handling the event)
@@ -308,20 +379,6 @@ namespace PeopleVilleV2
             // Raise the event
             MyEvent?.Invoke(this, EventArgs.Empty);
         }
-
-        private void button_Click(object sender, EventArgs e)
-        {
-            //Train train = new Train();
-            //train.Drive();
-            //string newLocation = train.Drive();
-            //InhibitansDataModel selectedRow1 = PeopleGrid.SelectedItems[0] as InhibitansDataModel;
-            //selectedRow1.Location = newLocation;
-            //train.Stop();
-            //newLocation = train.Stop();
-            //InhibitansDataModel selectedRow2 = PeopleGrid.SelectedItems[1] as InhibitansDataModel;
-            //selectedRow2.Location = newLocation;
-        }
-
     }
 }
 

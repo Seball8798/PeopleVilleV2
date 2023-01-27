@@ -23,7 +23,7 @@ namespace PeopleVilleLibraryV2.iItems
         public List<string> FoodList()
         {
             List<string> food = new List<string>();
-            food.Add("Mango"); food.Add("Banana"); food.Add("Orange"); food.Add("Pizza"); food.Add("Burger");
+            food.Add("Mango"); food.Add("Banana"); food.Add("Orange"); food.Add("Pizza"); food.Add("Burger"); food.Add("Peanut"); food.Add("Mango");
             return food;
         }
     }

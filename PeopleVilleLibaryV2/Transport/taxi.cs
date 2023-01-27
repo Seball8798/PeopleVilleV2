@@ -8,7 +8,7 @@ namespace PeopleVilleLibraryV2.Transport
 {
     public class Taxi : Transport
     {
-        public override void Drive()
+        public override string Drive()
         {
             Random rnd = new Random();
             int retning = rnd.Next(1, 7);
@@ -16,30 +16,24 @@ namespace PeopleVilleLibraryV2.Transport
             switch (retning)
             {
                 case 1:
-                    Console.WriteLine("Restaurant");
-                    break;
+                    return "Restaurant";
                 case 2:
-                    Console.WriteLine("From Supermarket");
-                    break;             
-                case 3:                
-                    Console.WriteLine("From Bank");
-                    break;             
-                case 4:                
-                    Console.WriteLine("From Station");
-                    break;             
-                case 5:                
-                    Console.WriteLine("From Apotek");
-                    break;             
-                case 6:                
-                    Console.WriteLine("From Bibliotek");
-                    break;             
+                    return "From Supermarket";
+                case 3:
+                    return "From Bank";
+                case 4:
+                    return "From Station";             
+                case 5:
+                    return "From Apotek";             
+                case 6:
+                    return "From Bibliotek";             
                 case 7:                
-                    Console.WriteLine("From Centrum");
-                    break;             
+                    return"From Centrum";              
             }
+            return "";
         }
 
-        public override void Stop()
+        public override string Stop()
         {
 
             Random rnd = new Random();
@@ -48,27 +42,21 @@ namespace PeopleVilleLibraryV2.Transport
             switch (stop)
             {
                 case 1:
-                    Console.WriteLine("Stop Restaurant");
-                    break;
+                    return "Stop Restaurant";
                 case 2:
-                    Console.WriteLine("Stop Supermarket");
-                    break;
+                    return "Stop Supermarket";
                 case 3:
-                    Console.WriteLine("Stop Bank");
-                    break;
+                    return "Stop Bank";
                 case 4:
-                    Console.WriteLine("Stop Station");
-                    break;
+                    return "Stop Station";
                 case 5:
-                    Console.WriteLine("Stop Apotek");
-                    break;
+                    return "Stop Apotek";
                 case 6:
-                    Console.WriteLine("Stop Bibliotek");
-                    break;
+                    return "Stop Bibliotek";
                 case 7:
-                    Console.WriteLine("Stop Centrum");
-                    break;
+                    return "Stop Centrum";
             }
+            return "";
         }
     }
 }
