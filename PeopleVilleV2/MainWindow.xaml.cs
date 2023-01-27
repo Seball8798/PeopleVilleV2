@@ -156,7 +156,7 @@ namespace PeopleVilleV2
         public int dayIndex;
         public int TransportIndex;
 
-
+        // -------------------------------- Switchday---------------------------------------------
         private void SwitchDay_Click(object sender, RoutedEventArgs e)
         {
 
@@ -173,7 +173,7 @@ namespace PeopleVilleV2
 
             TradeStackpanel.Children.Clear();
         }
-        private void button_Click(object sender, EventArgs e)
+        private void transportbutton_click(object sender, EventArgs e)
         {
             Train train = new Train();
             int randinhibit = rand.Next(0, 4);
