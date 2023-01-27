@@ -10,7 +10,7 @@ namespace PeopleVilleLibraryV2.iItems
     {
         public List<string> Items { get; set; }
 
-        public int price { get; set; };
+        public int price { get; set; }
 
         public Weapon()
         {

@@ -311,15 +311,15 @@ namespace PeopleVilleV2
 
         private void button_Click(object sender, EventArgs e)
         {
-            Train train = new Train();
-            train.Drive();
-            string newLocation = train.Drive();
-            InhibitansDataModel selectedRow1 = PeopleGrid.SelectedItems[0] as InhibitansDataModel;
-            selectedRow1.Location = newLocation;
-            train.Stop();
-            newLocation = train.Stop();
-            InhibitansDataModel selectedRow2 = PeopleGrid.SelectedItems[1] as InhibitansDataModel;
-            selectedRow2.Location = newLocation;
+            //Train train = new Train();
+            //train.Drive();
+            //string newLocation = train.Drive();
+            //InhibitansDataModel selectedRow1 = PeopleGrid.SelectedItems[0] as InhibitansDataModel;
+            //selectedRow1.Location = newLocation;
+            //train.Stop();
+            //newLocation = train.Stop();
+            //InhibitansDataModel selectedRow2 = PeopleGrid.SelectedItems[1] as InhibitansDataModel;
+            //selectedRow2.Location = newLocation;
         }
 
     }
