@@ -12,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Label = System.Windows.Controls.Label;
 using System.ComponentModel;
+using PeopleVilleLibraryV2.Transport;
 
 namespace PeopleVilleV2
 {
@@ -106,7 +107,6 @@ namespace PeopleVilleV2
 
         public List<InhibitansDataModel> inhibitansList = new List<InhibitansDataModel>();
         public Random rand = new Random();
-        public RandomEvents randomEvents = new RandomEvents();
         public Inhibitans inhibitans = new Inhibitans();
         public Inhibitans inhibitant_Bob;
         public Inhibitans inhibitant_Mikkel;
@@ -308,6 +308,20 @@ namespace PeopleVilleV2
             // Raise the event
             MyEvent?.Invoke(this, EventArgs.Empty);
         }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            Train train = new Train();
+            train.Drive();
+            string newLocation = train.Drive();
+            InhibitansDataModel selectedRow1 = PeopleGrid.SelectedItems[0] as InhibitansDataModel;
+            selectedRow1.Location = newLocation;
+            train.Stop();
+            newLocation = train.Stop();
+            InhibitansDataModel selectedRow2 = PeopleGrid.SelectedItems[1] as InhibitansDataModel;
+            selectedRow2.Location = newLocation;
+        }
+
     }
 }
 

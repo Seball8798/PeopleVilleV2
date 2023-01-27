@@ -8,9 +8,14 @@ namespace PeopleVilleLibraryV2.iItems
 {
     public class Weapon : Iitems
     {
-        public string name { get; set; }
+        public List<string> Items { get; set; }
 
-        public int price { get; set; }
+        public int price { get; set; };
+
+        public Weapon()
+        {
+            Items = WeaponList();
+        }
 
         public List<string> WeaponList()
         {

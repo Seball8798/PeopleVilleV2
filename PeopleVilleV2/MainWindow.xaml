@@ -96,7 +96,7 @@
                             <DataGridTextColumn Header="Weapons" FontSize="16" FontWeight="Light" Width="90" Binding="{Binding Weapons}" />
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="labelButton"  Content="mark two columns" Margin="165,270,235,50"  Click="Button_Click_1" FontFamily="Bookman Old Style" FontSize="14">
+                    <Button x:Name="labelButton"  Content="mark two columns" Margin="285,270,135,50"  Click="Button_Click_1" FontFamily="Bookman Old Style" FontSize="16">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -104,7 +104,7 @@
                         </Button.Resources>
                     </Button>
 
-                    <Button x:Name="TradeButton"  Content="Trade" Margin="390,270,160,50"  Width="50" Click="TradeButton_Click" FontFamily="Bookman Old Style" FontSize="14">
+                    <Button x:Name="TradeButton"  Content="Trade" Margin="480,270,70,50"  Width="50" Click="TradeButton_Click" FontFamily="Bookman Old Style" FontSize="16">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -113,6 +113,13 @@
                     </Button>
 
                     <StackPanel x:Name="TradeStackpanel" HorizontalAlignment="Left" Height="80" Margin="137,177,0,0" VerticalAlignment="Top" Width="347"/>
+                    <Button x:Name="transportbutton"  Content="Take Transport" Margin="90,270,348,50" Click="button_Click" FontFamily="Bookman Old Style" FontSize="16">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Grid>
             </Grid>
         </Grid>

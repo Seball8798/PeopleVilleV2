@@ -8,7 +8,7 @@ namespace PeopleVilleLibraryV2.iItems
 {
     public interface Iitems
     {
-        string name { get; set; }
-        int price { get; set; }
+        public List<string> Items { get; set; }
+        public int price { get; set; }
     }
 }

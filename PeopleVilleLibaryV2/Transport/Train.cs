@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 namespace PeopleVilleLibraryV2.Transport
 {
     public class Train : Transport
+{
+    public string Location { get; set; }
+
+    public override void Drive() 
     {
+        Random rnd = new Random();
+        int retningA = rnd.Next(1, 7);
 
-        public override void Drive() 
+        switch (retningA)
         {
-
-            Random rnd = new Random();
-            int retningA = rnd.Next(1, 7);
-
-            switch (retningA)
-            {
-                case 1:
-                    Console.WriteLine("From St Odense");
-                    break;
-                case 2:
-                    Console.WriteLine("From St Ondesvej");
-                    break;
+            case 1:
+                Location = "From St Odense";
+                break;
+            case 2:
+                Location = "From St Ondesvej";
+                break;
                 case 3:
                     Console.WriteLine("From St Ringsvej");
                     break;
