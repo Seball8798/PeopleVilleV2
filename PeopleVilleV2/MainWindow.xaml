@@ -82,7 +82,10 @@
                     </Button>
                     <Label Content="Current day:  " Foreground="White" FontSize="14" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="0,8,0,0" VerticalAlignment="Top" Width="100"/>
                     <Label Name="DisplayDay" Content="Monday  " Foreground="White" FontSize="13" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="96,8,0,0" VerticalAlignment="Top" Width="500"/>
-                </Grid>
+                    <Button  x:Name="aiseEventButton" Click="RaiseEventButton_Click" Content="New Event" VerticalAlignment="Top" Background="#FF373544" Foreground="White" BorderBrush="#A3ABBD"  Margin="665,39,5,0" Height="26" MinHeight="25" MaxHeight="25" MinWidth="95" MaxWidth="95" FontSize="14" FontFamily="Bookman Old Style"/>
+                    <Label x:Name="eventlabel" Content="" Foreground="White" FontSize="13" FontFamily="Bookman Old Style" HorizontalAlignment="Left" Height="33"  Margin="415,3,0,0" VerticalAlignment="Top" Width="366"/>
+                
+            </Grid>
                 <Grid  Grid.RowSpan="3" Margin="100,50,100,1" Width="600">
                     <DataGrid x:Name="PeopleGrid"  Grid.Row="0"  Padding="10"  AutoGenerateColumns="False" HorizontalContentAlignment="Center" FontWeight="Medium" FontSize="17" Foreground="#FF373544" Margin="50,-2,50,26" Background="#FF36353E" ItemsSource="{Binding inhibitantList}" BorderBrush="#FFD0C1C1" FontFamily="Bookman Old Style" SelectionChanged="DataGrid_SelectionChanged">
                         <DataGrid.Columns>
@@ -93,7 +96,7 @@
                             <DataGridTextColumn Header="Weapons" FontSize="16" FontWeight="Light" Width="90" Binding="{Binding Weapons}" />
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="labelButton"  Content="Pick Item To Trade" Margin="200,270,200,50"  Click="Button_Click_1" FontFamily="Bookman Old Style">
+                    <Button x:Name="labelButton"  Content="mark two columns" Margin="165,270,235,50"  Click="Button_Click_1" FontFamily="Bookman Old Style" FontSize="14">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -101,10 +104,10 @@
                         </Button.Resources>
                     </Button>
 
-                    <Button x:Name="TradeButton"  Content="Trade" Margin="348,270,52,50"  Width="50" Click="TradeButton_Click" FontFamily="Bookman Old Style">
+                    <Button x:Name="TradeButton"  Content="Trade" Margin="390,270,160,50"  Width="50" Click="TradeButton_Click" FontFamily="Bookman Old Style" FontSize="14">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
+                                <Setter Property="CornerRadius" Value="5"/>
                             </Style>
                         </Button.Resources>
                     </Button>

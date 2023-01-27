@@ -34,12 +34,12 @@ namespace PeopleVilleLibraryV2.InhibitansFolder
             location= Location;
         }
 
-        public Inhibitans(string Name, string Food, string Weapon, int MoneyAmount )
+        public Inhibitans(string Name, string Food, int MoneyAmount, string Location)
         {
             name = Name;
             food = Food;
             moneyAmount = MoneyAmount;
-            weapon = Weapon;
+            location = Location;
         }
         public Inhibitans(string Name, string Food, string Weapon)
         {
